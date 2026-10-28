@@ -1,0 +1,55 @@
+{
+  "source_repository": "dlr-trip-planner",
+  "source_tree_sha": "11934dbc08fc22ddbfe640274ddddf4d8bc692f0",
+  "files": [
+    {
+      "path": "src/features/trip/NowNextCards.tsx",
+      "source_path": "client/src/features/trip/NowNextCards.tsx",
+      "source_sha256": "d055cc619dc8b183cb22b4f87e0e228858c8c8b271355749c85e42e0612e21e3",
+      "published_sha256": "d055cc619dc8b183cb22b4f87e0e228858c8c8b271355749c85e42e0612e21e3",
+      "unchanged": true
+    },
+    {
+      "path": "src/features/trip/DayTabs.tsx",
+      "source_path": "client/src/features/trip/DayTabs.tsx",
+      "source_sha256": "4698318155ee15b2cddcd3ce36813c1a1013f0e1224cba1e08de74f837725051",
+      "published_sha256": "4c60813fcd57dc97e48054540082e2c43b31962521a44f7c66a4a62e9ca57f8c",
+      "unchanged": false
+    },
+    {
+      "path": "src/features/trip/BottomNavigation.tsx",
+      "source_path": "client/src/features/trip/BottomNavigation.tsx",
+      "source_sha256": "935cc05ce40835e87b4412924566c67bd45633d2f3bae2922537d68c1a8d5acc",
+      "published_sha256": "935cc05ce40835e87b4412924566c67bd45633d2f3bae2922537d68c1a8d5acc",
+      "unchanged": true
+    },
+    {
+      "path": "src/features/trip/types.ts",
+      "source_path": "client/src/features/trip/types.ts",
+      "source_sha256": "dd667c6c9f275b935eeb69d70f84458b9238bef1767c7c99a2f8039ac4c1746c",
+      "published_sha256": "9d3250e1dfd9cf77b338a9a63e91e55d30bad174d1b5e67374d4e653acbe328f",
+      "unchanged": false
+    },
+    {
+      "path": "src/features/trip/ProgressBar.tsx",
+      "source_path": "client/src/features/trip/ProgressBar.tsx",
+      "source_sha256": "7e22e0081d492782d4ed783749bf70de67295b8363f11e3df9c8a569ff7f6243",
+      "published_sha256": "7e22e0081d492782d4ed783749bf70de67295b8363f11e3df9c8a569ff7f6243",
+      "unchanged": true
+    },
+    {
+      "path": "src/features/trip/ScheduleList.tsx",
+      "source_path": "client/src/features/trip/ScheduleList.tsx",
+      "source_sha256": "8d5d38666c6eb966856e173d3ec1c0ee04372e4e592d3c65d59781e41ec9e9c1",
+      "published_sha256": "3450653078982e45fd340bf67135622dfa4a8294fbae513ce2de5e432ed1814d",
+      "unchanged": false
+    },
+    {
+      "path": "src/features/trip/item-detail/types.ts",
+      "source_path": "client/src/features/trip/item-detail/types.ts",
+      "source_sha256": "1f61785d61e7f11cacc47a3210eb58526f0df86405d63785679f6d595bd8bf96",
+      "published_sha256": "e08df50e50e40cdc1529af95b830f5c2fd7dc793b614f31ac04b0bf5db98b284",
+      "unchanged": false
+    }
+  ]
+}
