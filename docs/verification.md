@@ -106,3 +106,32 @@ README用に[画像](images/)を追加しました。390×844の公開デモの�
 | [ops/wait-filter.png](images/ops/wait-filter.png) | 待ち時間で絞り込む | 78,328 | 確認済み：個人情報・秘密情報・URLバー・ローカルパスなし |
 | [ops/wait-history.png](images/ops/wait-history.png) | 待ち時間の推移表示 | 117,004 | 確認済み：個人情報・秘密情報・URLバー・ローカルパスなし |
 | [ops/wait-times.png](images/ops/wait-times.png) | 待ち時間の一覧 | 102,820 | 確認済み：個人情報・秘密情報・URLバー・ローカルパスなし |
+
+## 依存更新時の確認（2026年10月30日）
+
+Vite 7.3.7へ更新し、Playwrightによるスモークテストを追加しました。上の「自動テスト0件・CIはbuildのみ」は過去の確認時点の記録です。現在のCIは依存監査・型検査とビルド・スモークテストを実行する構成です。
+
+| 確認項目 | ローカルでの結果 |
+| --- | --- |
+| npm ci | 成功 |
+| npm audit --json（全依存） | 検出0件 |
+| npm run build | 型検査・本番ビルド成功 |
+| 画面幅390×844、1280×1000 | 両方で主要操作のテスト成功 |
+| 初期表示・ページタイトル・Viteエラー表示なし | 確認済み |
+| 完了操作 | 進捗25%、NOWがリバー・クルーズへ移行 |
+| 日程 | Day 2とDay 1を切り替え |
+| 編集 | メモを保存し、詳細に再表示 |
+| キーボード | Enterで詳細を開く |
+| 下部タブ | 待ち時間・訪問順一覧・食事候補に切り替え |
+| 並べ替え・削除 | 順序変更と対象の削除を確認 |
+| リセット・リロード | 初期状態に戻ることを確認 |
+| 横方向のはみ出し | 両幅の初期画面でなし |
+| JavaScript例外・console error・外部リクエスト | テストした操作では検出なし |
+
+ローカル環境はNode.js 24.22.1、npm 11.9.0、Playwright 1.62.1、Chromium Headless Shell 141.0.7390.37です。Browserプラグインの実行ツールがなく、代替のクラウドブラウザからlocalhostへの接続もERR_CONNECTION_REFUSEDとなりました。ローカルテストでは、標準ブラウザのダウンロード失敗のため、取得できたChromiumを`SMOKE_CHROMIUM_PATH`で指定しました。CIはPlaywrightの対応ブラウザをインストールする構成です。
+
+初期画面のスクリーンショットは生成して目視確認しましたが、ローカル環境の日本語フォント不足で日本語が四角く表示されました。そのため日本語の字形・折り返しを含む視覚品質は今回の画像では確認できていません。アプリのテキストと操作はDOMで検査しています。CIではPlaywrightのOS依存パッケージを導入します。
+
+再実行は`npm ci`、`npm run build`、`npx playwright install --with-deps chromium --only-shell`、`npm run test:smoke`の順です。[テスト](../scripts/smoke.mjs)は本番ビルドをlocalhostで配信し、外部通信を遮断します。画面の証跡は`test-results/`に生成され、CIではartifactとして保存します。
+
+[依存監査](dependency-security.md)にアドバイザリ一覧、悪用条件、更新内容、未検証範囲を記録しています。クイズ・スワイプ・実地図など運用版だけの機能は今回のテスト対象ではありません。

@@ -249,8 +249,8 @@ AIの生成・保存は実行していません。ホームの共有参加・イ
 
 ## 品質の担保
 
-CIの検証コマンドは`npm run build`（`tsc --noEmit` + `vite build`）のみです（[設定](.github/workflows/check.yml)）。自動テストは0件です。
-今回もNode.js 24でビルド成功を確認しました。Playwrightでの手動確認10項目と検証範囲は[動作確認](docs/verification.md)にまとめています。
+CIでは依存監査、`npm run build`（`tsc --noEmit` + `vite build`）、`npm run test:smoke`を実行します（[設定](.github/workflows/check.yml)）。スモークテストは公開デモの主要操作を390×844と1280×1000で検査します。全機能・全状態を網羅するものではありません。
+Node.js 24でビルドを確認しています。過去の手動確認と今回の検証範囲は[動作確認](docs/verification.md)、監査結果・悪用条件・残るリスクは[依存監査](docs/dependency-security.md)にまとめています。
 利用者調査による使いやすさの改善量、実機タッチ操作、Safari、スクリーンリーダーは未検証です。
 
 ## 技術構成と動かし方
