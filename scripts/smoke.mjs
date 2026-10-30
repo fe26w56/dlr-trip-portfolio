@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import { spawn } from 'node:child_process';
 import { once } from 'node:events';
 import { mkdir } from 'node:fs/promises';
+import { stripVTControlCharacters } from 'node:util';
 import { chromium } from 'playwright';
 
 const url = 'http://127.0.0.1:4175';
@@ -14,7 +15,7 @@ try {
   let ready = false;
   for (let i = 0; i < 100; i++) {
     if (server.exitCode !== null) throw new Error(output);
-    if (output.includes(url)) { ready = true; break; }
+    if (stripVTControlCharacters(output).includes(url)) { ready = true; break; }
     await new Promise(resolve => setTimeout(resolve, 100));
   }
   assert.ok(ready, `Preview failed to start: ${output}`);
